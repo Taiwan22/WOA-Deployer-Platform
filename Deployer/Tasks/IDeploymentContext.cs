@@ -2,7 +2,7 @@
 {
     public interface IDeploymentContext
     {
-        IHighLevelWindowsDeployer WindowsDeployer { get; set; }
+        IDiskLayoutPreparer DiskLayoutPreparer { get; set; }
         IDevice Device { get; set; }
         SlimWindowsDeploymentOptions DeploymentOptions { get; set; }
     }

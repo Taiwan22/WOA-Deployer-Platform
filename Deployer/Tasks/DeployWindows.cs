@@ -8,18 +8,20 @@ namespace Deployer.Tasks
     public class DeployWindows : IDeploymentTask
     {
         private readonly IDeploymentContext context;
+        private readonly IWindowsDeployer deployer;
         private readonly IOperationProgress progressObserver;
 
-        public DeployWindows(IDeploymentContext context, IOperationProgress progressObserver)
+        public DeployWindows(IDeploymentContext context, IWindowsDeployer deployer, IOperationProgress progressObserver)
         {
             this.context = context;
+            this.deployer = deployer;
             this.progressObserver = progressObserver;
         }
 
         public async Task Execute()
         {
             Log.Information("Deploying Windows...");
-            await context.WindowsDeployer.Deploy(context.Device, progressObserver);
+            await deployer.Deploy(context.DeploymentOptions, context.Device, progressObserver);
         }
     }
 }
