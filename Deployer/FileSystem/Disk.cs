@@ -23,6 +23,7 @@ namespace Deployer.FileSystem
             IsBoot = diskProps.IsBoot;
             IsReadOnly = diskProps.IsReadOnly;
             IsOffline = diskProps.IsOffline;
+            UniqueId = diskProps.UniqueId;
         }
 
         public ByteSize Size { get; }
@@ -43,6 +44,7 @@ namespace Deployer.FileSystem
 
         public uint Number { get; }
         public ByteSize AvailableSize => Size - AllocatedSize;
+        public string UniqueId { get; set; }
 
         public async Task<List<Partition>> GetPartitions()
         {

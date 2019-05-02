@@ -21,6 +21,7 @@ namespace Deployer.Tasks
         public async Task Execute()
         {
             Log.Information("Deploying Windows...");
+            await context.DiskLayoutPreparer.Prepare(await context.Device.GetDeviceDisk());
             await deployer.Deploy(context.DeploymentOptions, context.Device, progressObserver);
         }
     }

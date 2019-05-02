@@ -17,7 +17,7 @@ namespace Deployer
             this.bootCreator = bootCreator;
         }
 
-        public async Task Deploy(SlimWindowsDeploymentOptions options, IDevice device, IOperationProgress progressObserver)
+        public async Task Deploy(WindowsDeploymentOptions options, IDevice device, IOperationProgress progressObserver)
         {
             Log.Information("Applying Windows Image");
             progressObserver.Percentage.OnNext(double.NaN);

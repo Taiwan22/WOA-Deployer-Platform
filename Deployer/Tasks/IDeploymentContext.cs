@@ -4,6 +4,6 @@
     {
         IDiskLayoutPreparer DiskLayoutPreparer { get; set; }
         IDevice Device { get; set; }
-        SlimWindowsDeploymentOptions DeploymentOptions { get; set; }
+        WindowsDeploymentOptions DeploymentOptions { get; set; }
     }
 }

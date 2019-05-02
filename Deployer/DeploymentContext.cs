@@ -6,6 +6,6 @@ namespace Deployer
     {
         public IDiskLayoutPreparer DiskLayoutPreparer { get; set; } = new NullDiskPreparer();
         public IDevice Device { get; set; } = new NullDevice();
-        public SlimWindowsDeploymentOptions DeploymentOptions { get; set; } = new SlimWindowsDeploymentOptions();
+        public WindowsDeploymentOptions DeploymentOptions { get; set; } = new WindowsDeploymentOptions();
     }
 }
