@@ -25,11 +25,6 @@ namespace Deployer
         public abstract Task<Disk> GetDeviceDisk();
         public abstract Task<Volume> GetWindowsVolume();
 
-        protected async Task<Volume> GetVolumeByPartitionName(string partitionName)
-        {
-            return await (await GetDeviceDisk()).GetVolumeByPartitionName(partitionName);
-        }
-
         protected async Task<bool> IsWoAPresent()
         {
             try
