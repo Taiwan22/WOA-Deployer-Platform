@@ -20,7 +20,6 @@ namespace Deployer.Gui.ViewModels
         private readonly ObservableAsPropertyHelper<WimMetadataViewModel> pickWimFileObs;
         private readonly ISettingsService settingsService;
         private readonly UIServices uiServices;
-        private const string GetWoaLink = "https://github.com/WOA-Project/WOA-Deployer-Lumia/blob/master/Docs/GettingWoA.md";
 
         public WimPickViewModel(UIServices uiServices, ISettingsService settingsService)
         {
