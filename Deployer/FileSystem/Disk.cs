@@ -44,7 +44,7 @@ namespace Deployer.FileSystem
 
         public uint Number { get; }
         public ByteSize AvailableSize => Size - AllocatedSize;
-        public string UniqueId { get; set; }
+        public string UniqueId { get; }
 
         public async Task<List<Partition>> GetPartitions()
         {
@@ -60,7 +60,7 @@ namespace Deployer.FileSystem
             {
                 using (var context = await GptContextFactory.Create(Number, FileAccess.Read))
                 {
-                    var partition = context.Partitions.First(x =>
+                    var partition = context.Partitions.FirstOrDefault(x =>
                         string.Equals(x.Name, name, StringComparison.InvariantCultureIgnoreCase));
 
                     if (partition == null)
